@@ -3,13 +3,15 @@ import model.Odontologo;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import service.OdontologoService;
+import java.util.List;
+
 
 public class OdontologoServiceTest {
     @Test
     public void ListarOdontologo(){
         BD.crearTablas();
         OdontologoService odontologoService= new OdontologoService();
-        Odontologo odontologo = odontologoService.listarOdontologos();
-        Assertions.assertTrue(odontologo!=null);
+        List<Odontologo> odontologos = (List<Odontologo>) odontologoService.listarOdontologos();
+        Assertions.assertNotNull(odontologos, "La lista de odontólogos no debería ser nula");
     }
 }

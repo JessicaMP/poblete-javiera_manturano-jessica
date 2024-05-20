@@ -11,7 +11,7 @@ import java.util.List;
 
 public class OdontologoDAOH2 implements iDao<Odontologo> {
     private static final Logger logger = Logger.getLogger(OdontologoDAOH2.class);
-    private static final String SQL_SELECT_ALL = "SELECT * FROM ODONTOLOGO?";
+    private static final String SQL_SELECT_ALL = "SELECT * FROM ODONTOLOGOS";
 
     @Override
     public Odontologo guardar(Odontologo odontologo) {
@@ -50,14 +50,13 @@ public class OdontologoDAOH2 implements iDao<Odontologo> {
             PreparedStatement psSELectAll = connection.prepareStatement(SQL_SELECT_ALL);
             ResultSet rs = psSELectAll.executeQuery();
             while (rs.next()) {
-                Odontologo newOdontologo = new Odontologo(rs.getString(1), rs.getString(2), rs.getInt(3));
+                Odontologo newOdontologo = new Odontologo(rs.getString("nombre"), rs.getString("apellido"), rs.getInt("matricula"));
                 odontologos.add(newOdontologo);
             }
 
         } catch (Exception e) {
             logger.error(e.getMessage());
         }
-
-        return null;
+        return odontologos;
     }
 }

@@ -4,6 +4,7 @@ import org.apache.log4j.Logger;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.SQLException;
 import java.sql.Statement;
 
 public class BD {
@@ -14,9 +15,10 @@ public class BD {
             "CEDULA VARCHAR(100) NOT NULL, FECHA_INGRESO DATE NOT NULL, DOMICILIO_ID INT NOT NULL )"; //<<-- FK
     private static final String SQL_DROP_CREATE_DOM="DROP TABLE IF EXISTS DOMICILIOS; " +
             "CREATE TABLE DOMICILIOS (ID INT AUTO_INCREMENT PRIMARY KEY, CALLE VARCHAR(100) NOT NULL, NUMERO INT NOT NULL, LOCALIDAD VARCHAR(100) NOT NULL, PROVINCIA VARCHAR(100) NOT NULL)";
-    private static final String SQL_DROP_CREATE_ODONT="DROP TABLE IF EXIST ODONTOLOGOS; CREATE TABLE ODONTOLOGOS(" + "ID INT AUTO_INCREMENT PRIMARY KEY, NOMBRE VARCHAR(100) NOT NULL, APELLIDO VARCHAR(100) NOT NULL, MATRICULA INT NOT NULL)";
+    private static final String SQL_DROP_CREATE_ODONT="DROP TABLE IF EXISTS ODONTOLOGOS;" +
+            "CREATE TABLE ODONTOLOGOS(ID INT AUTO_INCREMENT PRIMARY KEY, NOMBRE VARCHAR(100) NOT NULL, APELLIDO VARCHAR(100) NOT NULL, MATRICULA INT NOT NULL)";
     private static final String SQL_PRUEBA="INSERT INTO PACIENTES (NOMBRE, APELLIDO, CEDULA, FECHA_INGRESO, DOMICILIO_ID) VALUES ('Jorgito','Pereyra','111111','2024-05-16', 1), ('German','Fraire','22222','2024-05-10',2); " +
-            "INSERT INTO DOMICILIOS  (CALLE, NUMERO, LOCALIDAD, PROVINCIA) VALUES ('Siempre Viva',742,'Springfield','USA'),('Av. Uruguay',345,'Punta del Este','Uruguay')"+
+            "INSERT INTO DOMICILIOS  (CALLE, NUMERO, LOCALIDAD, PROVINCIA) VALUES ('Siempre Viva',742,'Springfield','USA'),('Av. Uruguay',345,'Punta del Este','Uruguay'); " +
             "INSERT INTO ODONTOLOGOS (NOMBRE, APELLIDO, MATRICULA) VALUES ('Pedrito', 'Mendoza', 12345),('Camila', 'Flores', 87656)";
 
     public static void crearTablas(){
@@ -28,17 +30,23 @@ public class BD {
             statement.execute(SQL_DROP_CREATE_PAC);
             statement.execute(SQL_DROP_CREATE_ODONT);
             statement.execute(SQL_PRUEBA);
-            logger.info("tabla creada con exito");
-
-
+            logger.info("tablas creadas con exito");
 
         }catch (Exception e){
             logger.warn(e.getMessage());
+        } finally {
+            try{
+                if (connection != null) {
+                    connection.close();
+                }
+            } catch (SQLException ex) {
+                ex.getMessage();
+            }
         }
 
     }
     public static Connection getConnection() throws Exception{
         Class.forName("org.h2.Driver");
-        return DriverManager.getConnection("jdbc:h2:mem:~/clinicaOdontologica","sa","sa");
+        return DriverManager.getConnection("jdbc:h2:~/clinicaOdontologica","user","password");
     }
 }

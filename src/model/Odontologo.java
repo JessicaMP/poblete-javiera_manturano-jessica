@@ -5,9 +5,9 @@ public class Odontologo {
     private Integer id;
     private String nombre;
     private String apellido;
-    private Integer matricula;
+    private int matricula;
 
-    public Odontologo(String nombre, String apellido, Integer matricula) {
+    public Odontologo(String nombre, String apellido, int matricula) {
         this.nombre = nombre;
         this.apellido = apellido;
         this.matricula = matricula;

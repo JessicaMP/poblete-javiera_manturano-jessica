@@ -1,6 +1,7 @@
 package dao;
 
 import model.Domicilio;
+import model.Odontologo;
 import org.apache.log4j.Logger;
 
 import java.sql.Connection;
@@ -49,6 +50,11 @@ public class DomicilioDAOH2 implements iDao<Domicilio>{
 
     @Override
     public List<Domicilio> buscarTodos() {
+        return null;
+    }
+
+    @Override
+    public List<Odontologo> listarOdontologos() {
         return null;
     }
 }

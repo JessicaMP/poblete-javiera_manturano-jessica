@@ -15,3 +15,114 @@ INSERT INTO PACIENTES (NOMBRE, APELLIDO, CEDULA, FECHA_INGRESO, DOMICILIO_ID) VA
 [2024-05-16 20:26:42] [ INFO ] [BD:29] tabla creada con exito
 [2024-05-16 20:26:42] [ INFO ] [PacienteDAOH2:23] iniciando la operacion de buscado de un paciente con id : 2
 [2024-05-16 20:26:42] [ INFO ] [DomicilioDAOH2:22] iniciando la busqueda de un domicilio con id: 2
+[2024-05-20 15:39:54] [ WARN ] [BD:37] Error de Sintaxis en sentencia SQL "DROP TABLE [*]IF EXIST ODONTOLOGOS; CREATE TABLE ODONTOLOGOS(ID INT AUTO_INCREMENT PRIMARY KEY, NOMBRE VARCHAR(100) NOT NULL, APELLIDO VARCHAR(100) NOT NULL, MATRICULA INT NOT NULL)"; se esperaba "identifier"
+Syntax error in SQL statement "DROP TABLE [*]IF EXIST ODONTOLOGOS; CREATE TABLE ODONTOLOGOS(ID INT AUTO_INCREMENT PRIMARY KEY, NOMBRE VARCHAR(100) NOT NULL, APELLIDO VARCHAR(100) NOT NULL, MATRICULA INT NOT NULL)"; expected "identifier"; SQL statement:
+DROP TABLE IF EXIST ODONTOLOGOS; CREATE TABLE ODONTOLOGOS(ID INT AUTO_INCREMENT PRIMARY KEY, NOMBRE VARCHAR(100) NOT NULL, APELLIDO VARCHAR(100) NOT NULL, MATRICULA INT NOT NULL) [42001-224]
+[2024-05-20 15:39:54] [ INFO ] [OdontologoDAOH2:43] iniciando la operacion de buscador de un odontogos
+[2024-05-20 15:39:54] [ ERROR] [OdontologoDAOH2:58] Table "ODONTOLOGO" not found (this database is empty); SQL statement:
+SELECT * FROM ODONTOLOGO? [42104-224]
+[2024-05-20 15:42:40] [ WARN ] [BD:38] Error de Sintaxis en sentencia SQL "DROP TABLE [*]IF EXIST ODONTOLOGOS;CREATE TABLE ODONTOLOGOS(ID INT AUTO_INCREMENT PRIMARY KEY, NOMBRE VARCHAR(100) NOT NULL, APELLIDO VARCHAR(100) NOT NULL, MATRICULA INT NOT NULL)"; se esperaba "identifier"
+Syntax error in SQL statement "DROP TABLE [*]IF EXIST ODONTOLOGOS;CREATE TABLE ODONTOLOGOS(ID INT AUTO_INCREMENT PRIMARY KEY, NOMBRE VARCHAR(100) NOT NULL, APELLIDO VARCHAR(100) NOT NULL, MATRICULA INT NOT NULL)"; expected "identifier"; SQL statement:
+DROP TABLE IF EXIST ODONTOLOGOS;CREATE TABLE ODONTOLOGOS(ID INT AUTO_INCREMENT PRIMARY KEY, NOMBRE VARCHAR(100) NOT NULL, APELLIDO VARCHAR(100) NOT NULL, MATRICULA INT NOT NULL) [42001-224]
+[2024-05-20 15:42:40] [ INFO ] [OdontologoDAOH2:43] iniciando la operacion de buscador de un odontogos
+[2024-05-20 15:42:40] [ ERROR] [OdontologoDAOH2:58] Table "ODONTOLOGO" not found (this database is empty); SQL statement:
+SELECT * FROM ODONTOLOGO? [42104-224]
+[2024-05-20 15:43:54] [ WARN ] [BD:38] Error de Sintaxis en sentencia SQL "DROP TABLE [*]IF EXIST ODONTOLOGOS;CREATE TABLE ODONTOLOGOS(ID INT AUTO_INCREMENT PRIMARY KEY, NOMBRE VARCHAR(100) NOT NULL, APELLIDO VARCHAR(100) NOT NULL, MATRICULA INT NOT NULL)"; se esperaba "identifier"
+Syntax error in SQL statement "DROP TABLE [*]IF EXIST ODONTOLOGOS;CREATE TABLE ODONTOLOGOS(ID INT AUTO_INCREMENT PRIMARY KEY, NOMBRE VARCHAR(100) NOT NULL, APELLIDO VARCHAR(100) NOT NULL, MATRICULA INT NOT NULL)"; expected "identifier"; SQL statement:
+DROP TABLE IF EXIST ODONTOLOGOS;CREATE TABLE ODONTOLOGOS(ID INT AUTO_INCREMENT PRIMARY KEY, NOMBRE VARCHAR(100) NOT NULL, APELLIDO VARCHAR(100) NOT NULL, MATRICULA INT NOT NULL) [42001-224]
+[2024-05-20 15:43:54] [ INFO ] [OdontologoDAOH2:43] iniciando la operacion de buscador de un odontogos
+[2024-05-20 15:43:54] [ ERROR] [OdontologoDAOH2:58] Table "ODONTOLOGO" not found (this database is empty); SQL statement:
+SELECT * FROM ODONTOLOGO? [42104-224]
+[2024-05-20 16:03:31] [ WARN ] [BD:38] Error de Sintaxis en sentencia SQL "DROP TABLE [*]IF EXIST ODONTOLOGOS;CREATE TABLE ODONTOLOGOS(ID INT AUTO_INCREMENT PRIMARY KEY, NOMBRE VARCHAR(100) NOT NULL, APELLIDO VARCHAR(100) NOT NULL, MATRICULA INT NOT NULL)"; se esperaba "identifier"
+Syntax error in SQL statement "DROP TABLE [*]IF EXIST ODONTOLOGOS;CREATE TABLE ODONTOLOGOS(ID INT AUTO_INCREMENT PRIMARY KEY, NOMBRE VARCHAR(100) NOT NULL, APELLIDO VARCHAR(100) NOT NULL, MATRICULA INT NOT NULL)"; expected "identifier"; SQL statement:
+DROP TABLE IF EXIST ODONTOLOGOS;CREATE TABLE ODONTOLOGOS(ID INT AUTO_INCREMENT PRIMARY KEY, NOMBRE VARCHAR(100) NOT NULL, APELLIDO VARCHAR(100) NOT NULL, MATRICULA INT NOT NULL) [42001-224]
+[2024-05-20 16:03:31] [ INFO ] [PacienteDAOH2:24] iniciando la operacion de buscado de un paciente con id : 2
+[2024-05-20 16:03:31] [ ERROR] [PacienteDAOH2:42] Table "PACIENTES" not found (this database is empty); SQL statement:
+SELECT * FROM PACIENTES WHERE ID=? [42104-224]
+[2024-05-20 16:04:46] [ WARN ] [BD:38] Error de Sintaxis en sentencia SQL "DROP TABLE [*]IF EXIST ODONTOLOGOS;CREATE TABLE ODONTOLOGOS(ID INT AUTO_INCREMENT PRIMARY KEY, NOMBRE VARCHAR(100) NOT NULL, APELLIDO VARCHAR(100) NOT NULL, MATRICULA INT NOT NULL)"; se esperaba "identifier"
+Syntax error in SQL statement "DROP TABLE [*]IF EXIST ODONTOLOGOS;CREATE TABLE ODONTOLOGOS(ID INT AUTO_INCREMENT PRIMARY KEY, NOMBRE VARCHAR(100) NOT NULL, APELLIDO VARCHAR(100) NOT NULL, MATRICULA INT NOT NULL)"; expected "identifier"; SQL statement:
+DROP TABLE IF EXIST ODONTOLOGOS;CREATE TABLE ODONTOLOGOS(ID INT AUTO_INCREMENT PRIMARY KEY, NOMBRE VARCHAR(100) NOT NULL, APELLIDO VARCHAR(100) NOT NULL, MATRICULA INT NOT NULL) [42001-224]
+[2024-05-20 16:04:46] [ INFO ] [OdontologoDAOH2:43] iniciando la operacion de buscador de un odontogos
+[2024-05-20 16:04:46] [ ERROR] [OdontologoDAOH2:58] Table "ODONTOLOGO" not found (this database is empty); SQL statement:
+SELECT * FROM ODONTOLOGO? [42104-224]
+[2024-05-20 16:06:02] [ WARN ] [BD:38] Error de Sintaxis en sentencia SQL "DROP TABLE [*]IF EXIST ODONTOLOGOS;CREATE TABLE ODONTOLOGOS(ID INT AUTO_INCREMENT PRIMARY KEY, NOMBRE VARCHAR(100) NOT NULL, APELLIDO VARCHAR(100) NOT NULL, MATRICULA INT NOT NULL)"; se esperaba "identifier"
+Syntax error in SQL statement "DROP TABLE [*]IF EXIST ODONTOLOGOS;CREATE TABLE ODONTOLOGOS(ID INT AUTO_INCREMENT PRIMARY KEY, NOMBRE VARCHAR(100) NOT NULL, APELLIDO VARCHAR(100) NOT NULL, MATRICULA INT NOT NULL)"; expected "identifier"; SQL statement:
+DROP TABLE IF EXIST ODONTOLOGOS;CREATE TABLE ODONTOLOGOS(ID INT AUTO_INCREMENT PRIMARY KEY, NOMBRE VARCHAR(100) NOT NULL, APELLIDO VARCHAR(100) NOT NULL, MATRICULA INT NOT NULL) [42001-224]
+[2024-05-20 16:06:02] [ INFO ] [OdontologoDAOH2:43] iniciando la operacion de buscador de un odontogos
+[2024-05-20 16:06:02] [ ERROR] [OdontologoDAOH2:58] Table "ODONTOLOGOS" not found (this database is empty); SQL statement:
+SELECT * FROM ODONTOLOGOS? [42104-224]
+[2024-05-20 16:09:25] [ WARN ] [BD:38] Tabla "PACIENTES" no encontrada
+Table "PACIENTES" not found; SQL statement:
+INSERT INTO PACIENTES (NOMBRE, APELLIDO, CEDULA, FECHA_INGRESO, DOMICILIO_ID) VALUES ('Jorgito','Pereyra','111111','2024-05-16', 1), ('German','Fraire','22222','2024-05-10',2); INSERT INTO DOMICILIOS  (CALLE, NUMERO, LOCALIDAD, PROVINCIA) VALUES ('Siempre Viva',742,'Springfield','USA'),('Av. Uruguay',345,'Punta del Este','Uruguay'); INSERT INTO ODONTOLOGOS (NOMBRE, APELLIDO, MATRICULA) VALUES ('Pedrito', 'Mendoza', 12345),('Camila', 'Flores', 87656) [42102-224]
+[2024-05-20 16:09:25] [ INFO ] [OdontologoDAOH2:43] iniciando la operacion de buscador de un odontogos
+[2024-05-20 16:09:25] [ ERROR] [OdontologoDAOH2:58] Table "ODONTOLOGOS" not found (this database is empty); SQL statement:
+SELECT * FROM ODONTOLOGOS? [42104-224]
+[2024-05-20 16:10:03] [ WARN ] [BD:38] Tabla "PACIENTES" no encontrada
+Table "PACIENTES" not found; SQL statement:
+INSERT INTO PACIENTES (NOMBRE, APELLIDO, CEDULA, FECHA_INGRESO, DOMICILIO_ID) VALUES ('Jorgito','Pereyra','111111','2024-05-16', 1), ('German','Fraire','22222','2024-05-10',2); INSERT INTO DOMICILIOS  (CALLE, NUMERO, LOCALIDAD, PROVINCIA) VALUES ('Siempre Viva',742,'Springfield','USA'),('Av. Uruguay',345,'Punta del Este','Uruguay'); INSERT INTO ODONTOLOGOS (NOMBRE, APELLIDO, MATRICULA) VALUES ('Pedrito', 'Mendoza', 12345),('Camila', 'Flores', 87656) [42102-224]
+[2024-05-20 16:10:03] [ INFO ] [OdontologoDAOH2:43] iniciando la operacion de buscador de un odontogos
+[2024-05-20 16:10:03] [ ERROR] [OdontologoDAOH2:58] Table "ODONTOLOGOS" not found (this database is empty); SQL statement:
+SELECT * FROM ODONTOLOGOS? [42104-224]
+[2024-05-20 16:10:20] [ INFO ] [BD:33] tabla creada con exito
+[2024-05-20 16:10:20] [ INFO ] [OdontologoDAOH2:43] iniciando la operacion de buscador de un odontogos
+[2024-05-20 16:10:20] [ ERROR] [OdontologoDAOH2:58] Table "ODONTOLOGOS" not found (this database is empty); SQL statement:
+SELECT * FROM ODONTOLOGOS? [42104-224]
+[2024-05-20 16:13:55] [ INFO ] [BD:33] tablas creadas con exito
+[2024-05-20 16:16:59] [ WARN ] [BD:36] La base de datos puede que ya esté siendo utilizada: "/Users/mac/clinicaOdontologica.mv.db". Soluciones Posibles: cierre todas las otras conexiones; use el modo server
+Database may be already in use: "/Users/mac/clinicaOdontologica.mv.db". Possible solutions: close all other connection(s); use the server mode [90020-224]
+[2024-05-20 16:18:00] [ WARN ] [BD:36] La base de datos puede que ya esté siendo utilizada: "/Users/mac/clinicaOdontologica.mv.db". Soluciones Posibles: cierre todas las otras conexiones; use el modo server
+Database may be already in use: "/Users/mac/clinicaOdontologica.mv.db". Possible solutions: close all other connection(s); use the server mode [90020-224]
+[2024-05-20 16:19:04] [ WARN ] [BD:36] La base de datos puede que ya esté siendo utilizada: "/Users/mac/clinicaOdontologica.mv.db". Soluciones Posibles: cierre todas las otras conexiones; use el modo server
+Database may be already in use: "/Users/mac/clinicaOdontologica.mv.db". Possible solutions: close all other connection(s); use the server mode [90020-224]
+[2024-05-20 16:20:27] [ INFO ] [BD:33] tablas creadas con exito
+[2024-05-20 16:22:05] [ WARN ] [BD:36] La base de datos puede que ya esté siendo utilizada: "/Users/mac/clinicaOdontologica.mv.db". Soluciones Posibles: cierre todas las otras conexiones; use el modo server
+Database may be already in use: "/Users/mac/clinicaOdontologica.mv.db". Possible solutions: close all other connection(s); use the server mode [90020-224]
+[2024-05-20 16:23:46] [ WARN ] [BD:36] La base de datos puede que ya esté siendo utilizada: "/Users/mac/clinicaOdontologica.mv.db". Soluciones Posibles: cierre todas las otras conexiones; use el modo server
+Database may be already in use: "/Users/mac/clinicaOdontologica.mv.db". Possible solutions: close all other connection(s); use the server mode [90020-224]
+[2024-05-20 16:24:14] [ INFO ] [BD:33] tablas creadas con exito
+[2024-05-20 16:26:59] [ INFO ] [BD:33] tablas creadas con exito
+[2024-05-20 16:26:59] [ INFO ] [OdontologoDAOH2:43] iniciando la operacion de buscador de un odontogos
+[2024-05-20 16:26:59] [ ERROR] [OdontologoDAOH2:58] Conversión de datos fallida, convirtiendo "Mendoza"
+Data conversion error converting "Mendoza" [22018-224]
+[2024-05-20 16:39:12] [ INFO ] [BD:33] tablas creadas con exito
+[2024-05-20 16:39:12] [ INFO ] [OdontologoDAOH2:43] iniciando la operacion de buscador de un odontogos
+[2024-05-20 16:39:12] [ ERROR] [OdontologoDAOH2:58] Conversión de datos fallida, convirtiendo "Mendoza"
+Data conversion error converting "Mendoza" [22018-224]
+[2024-05-20 16:42:17] [ INFO ] [BD:33] tablas creadas con exito
+[2024-05-20 16:42:17] [ INFO ] [OdontologoDAOH2:43] iniciando la operacion de buscador de un odontogos
+[2024-05-20 16:42:17] [ ERROR] [OdontologoDAOH2:58] Conversión de datos fallida, convirtiendo "Mendoza"
+Data conversion error converting "Mendoza" [22018-224]
+[2024-05-20 16:42:27] [ INFO ] [BD:33] tablas creadas con exito
+[2024-05-20 16:42:27] [ INFO ] [OdontologoDAOH2:43] iniciando la operacion de buscador de un odontogos
+[2024-05-20 16:42:27] [ ERROR] [OdontologoDAOH2:58] Conversión de datos fallida, convirtiendo "Mendoza"
+Data conversion error converting "Mendoza" [22018-224]
+[2024-05-20 16:43:18] [ INFO ] [BD:33] tablas creadas con exito
+[2024-05-20 16:43:19] [ INFO ] [OdontologoDAOH2:43] iniciando la operacion de buscador de un odontogos
+[2024-05-20 16:43:19] [ ERROR] [OdontologoDAOH2:58] Conversión de datos fallida, convirtiendo "Mendoza"
+Data conversion error converting "Mendoza" [22018-224]
+[2024-05-20 16:43:49] [ INFO ] [BD:33] tablas creadas con exito
+[2024-05-20 16:43:49] [ INFO ] [OdontologoDAOH2:43] iniciando la operacion de buscador de un odontogos
+[2024-05-20 16:43:49] [ ERROR] [OdontologoDAOH2:58] Conversión de datos fallida, convirtiendo "Mendoza"
+Data conversion error converting "Mendoza" [22018-224]
+[2024-05-20 16:50:24] [ INFO ] [BD:33] tablas creadas con exito
+[2024-05-20 16:50:24] [ INFO ] [OdontologoDAOH2:43] iniciando la operacion de buscador de un odontogos
+[2024-05-20 16:50:24] [ ERROR] [OdontologoDAOH2:58] Conversión de datos fallida, convirtiendo "Mendoza"
+Data conversion error converting "Mendoza" [22018-224]
+[2024-05-20 16:52:48] [ INFO ] [BD:33] tablas creadas con exito
+[2024-05-20 16:52:48] [ INFO ] [OdontologoDAOH2:43] iniciando la operacion de buscador de un odontogos
+[2024-05-20 16:52:48] [ ERROR] [OdontologoDAOH2:58] Conversión de datos fallida, convirtiendo "Mendoza"
+Data conversion error converting "Mendoza" [22018-224]
+[2024-05-20 16:59:08] [ INFO ] [BD:33] tablas creadas con exito
+[2024-05-20 16:59:08] [ INFO ] [OdontologoDAOH2:43] iniciando la operacion de buscador de un odontogos
+[2024-05-20 16:59:26] [ INFO ] [BD:33] tablas creadas con exito
+[2024-05-20 16:59:26] [ INFO ] [OdontologoDAOH2:43] iniciando la operacion de buscador de un odontogos
+[2024-05-20 16:59:44] [ INFO ] [BD:33] tablas creadas con exito
+[2024-05-20 16:59:45] [ INFO ] [OdontologoDAOH2:43] iniciando la operacion de buscador de un odontogos
+[2024-05-20 17:00:43] [ WARN ] [BD:36] La base de datos puede que ya esté siendo utilizada: "/Users/mac/clinicaOdontologica.mv.db". Soluciones Posibles: cierre todas las otras conexiones; use el modo server
+Database may be already in use: "/Users/mac/clinicaOdontologica.mv.db". Possible solutions: close all other connection(s); use the server mode [90020-224]
+[2024-05-20 17:00:43] [ INFO ] [PacienteDAOH2:24] iniciando la operacion de buscado de un paciente con id : 2
+[2024-05-20 17:00:43] [ ERROR] [PacienteDAOH2:42] La base de datos puede que ya esté siendo utilizada: "/Users/mac/clinicaOdontologica.mv.db". Soluciones Posibles: cierre todas las otras conexiones; use el modo server
+Database may be already in use: "/Users/mac/clinicaOdontologica.mv.db". Possible solutions: close all other connection(s); use the server mode [90020-224]
+[2024-05-20 17:00:52] [ INFO ] [BD:33] tablas creadas con exito
+[2024-05-20 17:00:52] [ INFO ] [PacienteDAOH2:24] iniciando la operacion de buscado de un paciente con id : 2
+[2024-05-20 17:00:52] [ INFO ] [DomicilioDAOH2:23] iniciando la busqueda de un domicilio con id: 2

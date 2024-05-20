@@ -4,6 +4,8 @@ import dao.OdontologoDAOH2;
 import dao.iDao;
 import model.Odontologo;
 
+import java.util.List;
+
 public class OdontologoService {
     private iDao<Odontologo> odontologoiDao;
 
@@ -16,7 +18,7 @@ public class OdontologoService {
         return odontologoiDao.guardar(odontologo);
     }
 
-    public Odontologo listarOdontologos() {
-        return (Odontologo) odontologoiDao.listarOdontologos();
+    public List<Odontologo> listarOdontologos() {
+        return odontologoiDao.listarOdontologos();
     }
 }
