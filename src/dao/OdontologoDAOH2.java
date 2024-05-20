@@ -19,10 +19,30 @@ public class OdontologoDAOH2 implements iDao<Odontologo> {
     }
 
     @Override
-    public list<Odontologo> listarOdontologos() {
+    public Odontologo buscarPorId(Integer id) {
+        return null;
+    }
+
+    @Override
+    public void eliminar(Integer id) {
+
+    }
+
+    @Override
+    public void actualizar(Odontologo odontologo) {
+
+    }
+
+    @Override
+    public List<Odontologo> buscarTodos() {
+        return null;
+    }
+
+    @Override
+    public List<Odontologo> listarOdontologos() {
         logger.info("iniciando la operacion de buscador de un odontogos");
         Connection connection = null;
-        list<Odontologo> odontologos = new ArrayList<Object>();
+        List<Odontologo> odontologos = new ArrayList<>();
 
         try {
             connection = BD.getConnection();
@@ -37,5 +57,7 @@ public class OdontologoDAOH2 implements iDao<Odontologo> {
         } catch (Exception e) {
             logger.error(e.getMessage());
         }
+
+        return null;
     }
 }

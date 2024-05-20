@@ -1,5 +1,7 @@
 package dao;
 
+import model.Odontologo;
+
 import java.util.List;
 
 public interface iDao<T> {
@@ -11,4 +13,5 @@ public interface iDao<T> {
 
     List<T> buscarTodos();
 
+    List<Odontologo> listarOdontologos();
 }

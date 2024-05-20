@@ -1,6 +1,7 @@
 package dao;
 
 import model.Domicilio;
+import model.Odontologo;
 import model.Paciente;
 import org.apache.log4j.Logger;
 
@@ -59,7 +60,12 @@ public class PacienteDAOH2 implements iDao<Paciente> {
     public List<Paciente> buscarTodos() {
         return null;
     }
-        /*private Integer id;
+
+    @Override
+    public List<Odontologo> listarOdontologos() {
+        return null;
+    }
+    /*private Integer id;
     private String nombre;
     private String apellido;
     private String cedula;

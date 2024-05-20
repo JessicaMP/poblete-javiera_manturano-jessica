@@ -2,7 +2,7 @@ package model;
 
 public class Odontologo {
 
-    private Interger id;
+    private Integer id;
     private String nombre;
     private String apellido;
     private Integer matricula;
@@ -13,11 +13,11 @@ public class Odontologo {
         this.matricula = matricula;
     }
 
-    public Interger getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(Interger id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
@@ -37,11 +37,11 @@ public class Odontologo {
         this.apellido = apellido;
     }
 
-    public Interger getMatricula() {
+    public Integer getMatricula() {
         return matricula;
     }
 
-    public void setMatricula(Interger matricula) {
+    public void setMatricula(Integer matricula) {
         this.matricula = matricula;
     }
 }
