@@ -28,3 +28,4 @@ public class PacienteController {
         //return pacienteService.buscarPorEmail(email);
     }
 }
+

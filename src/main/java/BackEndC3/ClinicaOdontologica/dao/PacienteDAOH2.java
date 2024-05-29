@@ -1,7 +1,6 @@
 package BackEndC3.ClinicaOdontologica.dao;
 
 import BackEndC3.ClinicaOdontologica.model.Domicilio;
-import BackEndC3.ClinicaOdontologica.model.Odontologo;
 import BackEndC3.ClinicaOdontologica.model.Paciente;
 import org.apache.log4j.Logger;
 
@@ -12,12 +11,15 @@ import java.util.List;
 public class PacienteDAOH2 implements iDao<Paciente> {
     private static final Logger logger= Logger.getLogger(PacienteDAOH2.class);
     private static final String SQL_SELECT_ONE="SELECT * FROM PACIENTES WHERE ID=?";
-    private static final String SQL_INSERT="INSERT INTO PACIENTES(NOMBRE, APELLIDO, CEDULA, FECHA_INGRESO, DOMICILIO_ID) VALUES(?,?,?,?,?)";
+    private static final String SQL_INSERT="INSERT INTO PACIENTES(NOMBRE, APELLIDO, CEDULA, FECHA_INGRESO, DOMICILIO_ID, EMAIL) VALUES(?,?,?,?,?,?)";
     private static final String SQL_SELECT_ALL="SELECT * FROM PACIENTES";
     private static final String SQL_SELECT_BY_EMAIL="SELECT * FROM PACIENTES WHERE EMAIL=?";
+    private static final String SQL_UPDATE="UPDATE PACIENTES SET NOMBRE=?, APELLIDO=?, CEDULA=?, FECHA_INGRESO=?, DOMICILIO_ID=?, EMAIL=? WHERE ID=?";
+    private static final String SQL_DELETE_ONE="DELETE FROM PACIENTES WHERE ID=?";
+
     @Override
     public Paciente guardar(Paciente paciente) {
-        logger.info("inciando las operaciones de guardado");
+        logger.info("inciando las operaciones de guardado de : "+paciente.getNombre());
         Connection connection= null;
         DomicilioDAOH2 daoAux= new DomicilioDAOH2();
         Domicilio domicilio=  daoAux.guardar(paciente.getDomicilio());
@@ -28,14 +30,14 @@ public class PacienteDAOH2 implements iDao<Paciente> {
             psInsert.setString(2, paciente.getApellido());
             psInsert.setString(3, paciente.getCedula());
             psInsert.setDate(4, Date.valueOf((paciente.getFechaIngreso())));
-        psInsert.setInt(5,domicilio.getId());
-        psInsert.setString(6, paciente.getEmail());
-        psInsert.execute();
-        ResultSet clave= psInsert.getGeneratedKeys();
-        while (clave.next()){
-            paciente.setId(clave.getInt(1));
-        }
-        logger.info("paciente guardado");
+            psInsert.setInt(5,domicilio.getId());
+            psInsert.setString(6, paciente.getEmail());
+            psInsert.execute();
+            ResultSet clave= psInsert.getGeneratedKeys();
+            while (clave.next()){
+                paciente.setId(clave.getInt(1));
+            }
+            logger.info("paciente guardado con exito");
 
 
         }catch (Exception e){
@@ -62,22 +64,61 @@ public class PacienteDAOH2 implements iDao<Paciente> {
                 paciente= new Paciente(rs.getInt(1),rs.getString(2),rs.getString(3),rs.getString(4),rs.getDate(5).toLocalDate(),domicilio,rs.getString(7));
             }
 
-
-        }catch (Exception e){
+        } catch (Exception e){
             logger.error(e.getMessage());
         }
-
 
         return paciente;
     }
 
     @Override
-    public void eliminar(Integer id) {
+    public String eliminar(Integer id) {
+        logger.info("iniciando la operacion de eliminar un paciente por id : "+id);
+        Connection connection= null;
+        Paciente paciente= null;
+        String message = "";
+        try {
+            connection= BD.getConnection();
+            Statement statement= connection.createStatement();
+            PreparedStatement psSElectOne= connection.prepareStatement(SQL_DELETE_ONE);
+            psSElectOne.setInt(1,id);
+            int rs= psSElectOne.executeUpdate();
 
+            if (rs > 0) {
+                message = "Paciente con ID: " + id + " fue eliminado exitosamente.";
+                logger.info(message);
+            } else {
+                message = "No se encontró un paciente con ID: " + id + " para eliminar.";
+                logger.warn(message);
+            }
+
+        }  catch (Exception e){
+            logger.error(e.getMessage());
+        }
+        return message;
     }
 
     @Override
     public void actualizar(Paciente paciente) {
+        logger.warn("iniciando las operaciones de actualizacion de un paciente con id : "+paciente.getId());
+        Connection connection= null;
+        DomicilioDAOH2 daoAux= new DomicilioDAOH2();
+        try{
+            connection= BD.getConnection();
+            daoAux.actualizar(paciente.getDomicilio());
+            PreparedStatement psUpdate= connection.prepareStatement(SQL_UPDATE);
+            psUpdate.setString(1, paciente.getNombre());
+            psUpdate.setString(2, paciente.getApellido());
+            psUpdate.setString(3, paciente.getCedula());
+            psUpdate.setDate(4,Date.valueOf(paciente.getFechaIngreso()));
+            psUpdate.setInt(5,paciente.getDomicilio().getId());
+            psUpdate.setString(6, paciente.getEmail());
+            psUpdate.setInt(7,paciente.getId());
+            psUpdate.execute();
+
+        }catch (Exception e){
+            logger.error(e.getMessage());
+        }
 
     }
 
@@ -103,7 +144,9 @@ public class PacienteDAOH2 implements iDao<Paciente> {
         }catch (Exception e){
             logger.error(e.getMessage());
         }
+        System.out.println(pacientes);
         return pacientes;
+
     }
 
     @Override
@@ -131,12 +174,6 @@ public class PacienteDAOH2 implements iDao<Paciente> {
 
         return paciente;
     }
-
-    @Override
-    public List<Odontologo> listarOdontologos() {
-        return null;
-    }
-
         /*private Integer id;
     private String nombre;
     private String apellido;

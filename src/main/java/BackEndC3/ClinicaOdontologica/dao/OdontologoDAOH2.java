@@ -26,8 +26,9 @@ public class OdontologoDAOH2 implements iDao<Odontologo> {
     }
 
     @Override
-    public void eliminar(Integer id) {
+    public String eliminar(Integer id) {
 
+        return null;
     }
 
     @Override
@@ -37,16 +38,6 @@ public class OdontologoDAOH2 implements iDao<Odontologo> {
 
     @Override
     public List<Odontologo> buscarTodos() {
-        return null;
-    }
-
-    @Override
-    public Odontologo buscarPorString(String string) {
-        return null;
-    }
-
-    @Override
-    public List<Odontologo> listarOdontologos() {
         logger.info("iniciando la operacion de buscador de un odontogos");
         Connection connection = null;
         List<Odontologo> odontologos = new ArrayList<>();
@@ -66,4 +57,31 @@ public class OdontologoDAOH2 implements iDao<Odontologo> {
         }
         return odontologos;
     }
+
+    @Override
+    public Odontologo buscarPorString(String string) {
+        return null;
+    }
+
+//    @Override
+//    public List<Odontologo> listarOdontologos() {
+//        logger.info("iniciando la operacion de buscador de un odontogos");
+//        Connection connection = null;
+//        List<Odontologo> odontologos = new ArrayList<>();
+//
+//        try {
+//            connection = BD.getConnection();
+//            Statement statement = connection.createStatement();
+//            PreparedStatement psSELectAll = connection.prepareStatement(SQL_SELECT_ALL);
+//            ResultSet rs = psSELectAll.executeQuery();
+//            while (rs.next()) {
+//                Odontologo newOdontologo = new Odontologo(rs.getString("nombre"), rs.getString("apellido"), rs.getInt("matricula"));
+//                odontologos.add(newOdontologo);
+//            }
+//
+//        } catch (Exception e) {
+//            logger.error(e.getMessage());
+//        }
+//        return odontologos;
+//    }
 }

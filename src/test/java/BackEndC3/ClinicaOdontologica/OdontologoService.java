@@ -19,6 +19,6 @@ public class OdontologoService {
     }
 
     public List<Odontologo> listarOdontologos() {
-        return odontologoiDao.listarOdontologos();
+        return odontologoiDao.buscarTodos();
     }
 }

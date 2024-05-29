@@ -25,6 +25,7 @@ public class Paciente {
         this.email= email;
     }
 
+
     public Paciente(Integer id, String nombre, String apellido, String cedula, LocalDate fechaIngreso, Domicilio domicilio, String email) {
         this.id = id;
         this.nombre = nombre;
@@ -35,8 +36,8 @@ public class Paciente {
         this.email= email;
     }
 
-
-
+    public Paciente() {
+    }
 
     @Override
     public String toString() {
