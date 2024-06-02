@@ -301,3 +301,26 @@ INSERT INTO ODONTOLOGOS(MATRICULA, NOMBRE, APELLIDO) VALUES(?,?,?) [42102-214]
 [2024-05-30 20:52:32] [ INFO ] [OdontologoDAOH2:78] iniciando las operaciones de:  listado de todos los odontologos
 [2024-06-02 18:15:16] [ INFO ] [BD:34] tabla creada con exito
 [2024-06-02 18:15:33] [ INFO ] [OdontologoDAOH2:78] iniciando las operaciones de:  listado de todos los odontologos
+[2024-06-02 18:19:41] [ INFO ] [BD:34] tabla creada con exito
+[2024-06-02 18:27:19] [ INFO ] [BD:34] tabla creada con exito
+[2024-06-02 18:27:30] [ INFO ] [OdontologoDAOH2:100] iniciando las operaciones de:  listado de todos los odontologos
+[2024-06-02 18:27:54] [ INFO ] [OdontologoDAOH2:47] iniciando las operaciones de:  buscado por ID: 1
+[2024-06-02 18:27:58] [ INFO ] [OdontologoDAOH2:47] iniciando las operaciones de:  buscado por ID: 2
+[2024-06-02 18:28:01] [ INFO ] [OdontologoDAOH2:47] iniciando las operaciones de:  buscado por ID: 3
+[2024-06-02 18:28:05] [ INFO ] [OdontologoDAOH2:47] iniciando las operaciones de:  buscado por ID: 1
+[2024-06-02 18:28:29] [ INFO ] [OdontologoDAOH2:68] Iniciando la operacion de eliminar un odontologo por id : 1
+[2024-06-02 18:28:29] [ INFO ] [OdontologoDAOH2:82] Odontologo con ID: 1 fue eliminado exitosamente.
+[2024-06-02 18:28:33] [ INFO ] [OdontologoDAOH2:100] iniciando las operaciones de:  listado de todos los odontologos
+[2024-06-02 18:28:35] [ INFO ] [OdontologoDAOH2:100] iniciando las operaciones de:  listado de todos los odontologos
+[2024-06-02 18:28:40] [ INFO ] [OdontologoDAOH2:68] Iniciando la operacion de eliminar un odontologo por id : 2
+[2024-06-02 18:28:40] [ INFO ] [OdontologoDAOH2:82] Odontologo con ID: 2 fue eliminado exitosamente.
+[2024-06-02 18:28:46] [ INFO ] [OdontologoDAOH2:68] Iniciando la operacion de eliminar un odontologo por id : 2
+[2024-06-02 18:28:46] [ WARN ] [OdontologoDAOH2:85] No se encontró un Odontologo con ID: 2 para eliminar.
+[2024-06-02 18:28:52] [ INFO ] [OdontologoDAOH2:100] iniciando las operaciones de:  listado de todos los odontologos
+[2024-06-02 18:28:53] [ INFO ] [OdontologoDAOH2:100] iniciando las operaciones de:  listado de todos los odontologos
+[2024-06-02 18:40:05] [ INFO ] [BD:34] tabla creada con exito
+[2024-06-02 18:41:39] [ INFO ] [BD:34] tabla creada con exito
+[2024-06-02 18:46:39] [ INFO ] [BD:34] tabla creada con exito
+[2024-06-02 18:47:51] [ INFO ] [OdontologoDAOH2:44] iniciando las operaciones de:  buscado por ID: 2
+[2024-06-02 18:47:51] [ WARN ] [OdontologoDAOH2:92] Iniciando las operaciones de actualizacion de un odontologo con id: 2
+[2024-06-02 18:47:59] [ INFO ] [OdontologoDAOH2:110] iniciando las operaciones de:  listado de todos los odontologos

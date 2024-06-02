@@ -27,4 +27,12 @@ public class OdontologoService {
         return odontologoiDao.buscarPorId(id);
     }
 
+    public void actualizarOdontologo(Odontologo odontologo){
+        odontologoiDao.actualizar(odontologo);
+    }
+
+    public String eliminarPorID(Integer id){
+        return odontologoiDao.eliminar(id);
+    }
+
 }

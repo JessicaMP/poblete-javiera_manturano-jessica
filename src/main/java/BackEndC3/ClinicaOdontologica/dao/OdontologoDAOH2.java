@@ -2,12 +2,10 @@ package BackEndC3.ClinicaOdontologica.dao;
 
 
 import BackEndC3.ClinicaOdontologica.model.Odontologo;
+import BackEndC3.ClinicaOdontologica.model.Paciente;
 import org.apache.log4j.Logger;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.Statement;
+import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -64,13 +62,47 @@ public class OdontologoDAOH2 implements iDao<Odontologo> {
 
     @Override
     public String eliminar(Integer id) {
+        logger.info("Iniciando la operacion de eliminar un odontologo por id : "+id);
+        Connection connection= null;
+        Odontologo odontologo= null;
+        String message = "";
 
-        return null;
+        try {
+            connection= BD.getConnection();
+            Statement statement= connection.createStatement();
+            PreparedStatement psSElectOne= connection.prepareStatement(SQL_DELETE);
+            psSElectOne.setInt(1,id);
+            int rs= psSElectOne.executeUpdate();
+
+            if (rs > 0) {
+                message = "Odontologo con ID: " + id + " fue eliminado exitosamente.";
+                logger.info(message);
+            } else {
+                message = "No se encontró un Odontologo con ID: " + id + " para eliminar.";
+                logger.warn(message);
+            }
+        }  catch (Exception e){
+            logger.error(e.getMessage());
+        }
+        return message;
     }
 
     @Override
     public void actualizar(Odontologo odontologo) {
+        logger.warn("Iniciando las operaciones de actualizacion de un odontologo con id: " + odontologo.getId());
+        Connection connection= null;
+        try{
+            connection= BD.getConnection();
+            PreparedStatement psUpdate= connection.prepareStatement(SQL_UPDATE);
+            psUpdate.setString(1, odontologo.getMatricula());
+            psUpdate.setString(2, odontologo.getNombre());
+            psUpdate.setString(3, odontologo.getApellido());
+            psUpdate.setInt(4,odontologo.getId());
+            psUpdate.execute();
 
+        } catch (Exception e){
+            logger.error(e.getMessage());
+        }
     }
 
     @Override
