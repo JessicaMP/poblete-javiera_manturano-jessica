@@ -299,3 +299,5 @@ INSERT INTO ODONTOLOGOS(MATRICULA, NOMBRE, APELLIDO) VALUES(?,?,?) [42102-214]
 [2024-05-30 20:49:49] [ INFO ] [OdontologoDAOH2:78] iniciando la operacion de buscador de un odontogos
 [2024-05-30 20:52:23] [ INFO ] [BD:34] tabla creada con exito
 [2024-05-30 20:52:32] [ INFO ] [OdontologoDAOH2:78] iniciando las operaciones de:  listado de todos los odontologos
+[2024-06-02 18:15:16] [ INFO ] [BD:34] tabla creada con exito
+[2024-06-02 18:15:33] [ INFO ] [OdontologoDAOH2:78] iniciando las operaciones de:  listado de todos los odontologos
