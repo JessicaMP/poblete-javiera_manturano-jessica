@@ -33,7 +33,7 @@ public class PacientePostmanController {
 
     }
 
-    @GetMapping("/list")
+    @GetMapping
     public List<Paciente> getPacientes() {
         return pacienteService.listarPacientes();
     }

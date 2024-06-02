@@ -1,16 +1,25 @@
 package BackEndC3.ClinicaOdontologica.model;
 
 public class Odontologo {
-
     private Integer id;
+    private String matricula;
     private String nombre;
     private String apellido;
-    private int matricula;
 
-    public Odontologo(String nombre, String apellido, int matricula) {
+    public Odontologo() {
+    }
+
+    public Odontologo(Integer id, String matricula, String nombre, String apellido) {
+        this.id = id;
+        this.matricula = matricula;
         this.nombre = nombre;
         this.apellido = apellido;
+    }
+
+    public Odontologo(String matricula, String nombre, String apellido) {
         this.matricula = matricula;
+        this.nombre = nombre;
+        this.apellido = apellido;
     }
 
     public Integer getId() {
@@ -19,6 +28,14 @@ public class Odontologo {
 
     public void setId(Integer id) {
         this.id = id;
+    }
+
+    public String getMatricula() {
+        return matricula;
+    }
+
+    public void setMatricula(String matricula) {
+        this.matricula = matricula;
     }
 
     public String getNombre() {
@@ -37,11 +54,13 @@ public class Odontologo {
         this.apellido = apellido;
     }
 
-    public Integer getMatricula() {
-        return matricula;
-    }
-
-    public void setMatricula(Integer matricula) {
-        this.matricula = matricula;
+    @Override
+    public String toString() {
+        return "Odontologo{" +
+                "id=" + id +
+                ", matricula='" + matricula + '\'' +
+                ", nombre='" + nombre + '\'' +
+                ", apellido='" + apellido + '\'' +
+                '}';
     }
 }
