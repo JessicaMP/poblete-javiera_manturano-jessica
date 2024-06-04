@@ -1,6 +1,8 @@
 package BackEndC3.ClinicaOdontologica.dao;
 
 
+import BackEndC3.ClinicaOdontologica.model.Turno;
+
 import java.util.List;
 
 public interface iDao<T> {

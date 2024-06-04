@@ -2,7 +2,6 @@ package BackEndC3.ClinicaOdontologica.dao;
 
 
 import BackEndC3.ClinicaOdontologica.model.Odontologo;
-import BackEndC3.ClinicaOdontologica.model.Paciente;
 import org.apache.log4j.Logger;
 
 import java.sql.*;

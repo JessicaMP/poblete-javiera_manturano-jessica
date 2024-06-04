@@ -1,6 +1,7 @@
 package BackEndC3.ClinicaOdontologica.dao;
 
 import BackEndC3.ClinicaOdontologica.model.Domicilio;
+import BackEndC3.ClinicaOdontologica.model.Turno;
 import org.apache.log4j.Logger;
 
 import java.sql.Connection;
@@ -80,10 +81,9 @@ public class DomicilioDAOH2 implements iDao<Domicilio>{
             psUpdate.setInt(5,domicilio.getId());
             psUpdate.execute();
 
-        }catch (Exception e){
+        } catch (Exception e){
             logger.error(e.getMessage());
         }
-
     }
 
     @Override

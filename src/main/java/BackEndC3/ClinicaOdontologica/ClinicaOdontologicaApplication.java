@@ -11,5 +11,4 @@ public class ClinicaOdontologicaApplication {
 		BD.crearTablas();
 		SpringApplication.run(ClinicaOdontologicaApplication.class, args);
 	}
-
 }

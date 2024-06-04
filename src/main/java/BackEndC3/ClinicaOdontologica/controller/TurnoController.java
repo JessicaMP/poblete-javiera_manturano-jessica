@@ -32,11 +32,30 @@ public class TurnoController {
         Odontologo odontologoBuscado= odontologoService.buscarPorId(turno.getOdontologo().getId());
         if(pacienteBuscado!=null&&odontologoBuscado!=null){
             return ResponseEntity.ok(turnoService.guardarTurno(turno));
-        }else{
+        } else {
             return ResponseEntity.badRequest().build();
         }
-
     }
+
+    @PutMapping
+    public ResponseEntity<String> actualizarTurno(@RequestBody Turno turno){
+        Turno turnoBuscado= turnoService.buscarPorId(turno.getId());
+        if(turnoBuscado!=null){
+            Paciente pacienteBuscado = pacienteService.buscarPorID(turno.getPaciente().getId());
+            Odontologo odontologoBuscado = odontologoService.buscarPorId(turno.getOdontologo().getId());
+
+            if (pacienteBuscado != null && odontologoBuscado != null) {
+                turno.setPaciente(pacienteBuscado);
+                turno.setOdontologo(odontologoBuscado);
+                turnoService.actualizarTurno(turno);
+                return ResponseEntity.ok("Turno actualizado con el id: "+ turno.getId()  + " con éxito");
+            }
+            return ResponseEntity.badRequest().body("Paciente u Odontólogo no encontrados");
+        } else {
+            return ResponseEntity.badRequest().body("Turno no encontrado");
+        }
+    }
+
     @GetMapping
     public ResponseEntity<List<Turno>> buscarTodos(){
         return ResponseEntity.ok(turnoService.buscarTodos());
@@ -44,5 +63,21 @@ public class TurnoController {
     @GetMapping("/{id}")
     public Turno getTurno(@PathVariable("id") Integer id) {
         return turnoService.buscarPorId(id);
+    }
+
+    @DeleteMapping("/{id}")
+    public  ResponseEntity<String> deleteTurno(@PathVariable("id") Integer id) {
+        Turno turnoBuscado= turnoService.buscarPorId(id);
+
+        if(turnoBuscado!=null) {
+            String resultado = turnoService.eliminarPorID(id);
+            if (resultado.equals("Turno eliminado con éxito")) {
+                return ResponseEntity.ok(resultado);
+            } else {
+                return ResponseEntity.badRequest().body(resultado);
+            }
+        } else {
+            return ResponseEntity.badRequest().body("Turno no encontrado");
+        }
     }
 }
