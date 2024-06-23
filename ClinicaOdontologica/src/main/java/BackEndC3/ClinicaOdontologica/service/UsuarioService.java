@@ -19,15 +19,10 @@ public class UsuarioService implements UserDetailsService {
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
         //como resolvemos?
-        Optional<Usuario> usuarioBuscado= usuarioRepository.findByEmail(username);
-        if(usuarioBuscado.isPresent()){
+        Optional<Usuario> usuarioBuscado = usuarioRepository.findByEmail(username);
+        if (usuarioBuscado.isPresent()) {
             return usuarioBuscado.get();
-        }else{
-            throw new UsernameNotFoundException("usuario inexistente: "+username);
         }
-
+        throw new UsernameNotFoundException("Usuario inexistente: " + username);
     }
-
-
-
 }

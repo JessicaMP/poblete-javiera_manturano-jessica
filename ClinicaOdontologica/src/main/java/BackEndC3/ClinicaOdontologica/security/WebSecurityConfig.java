@@ -23,31 +23,22 @@ public class WebSecurityConfig {
 
     //proveedor de autenticaciones DAO
     @Bean
-    public DaoAuthenticationProvider daoAuthenticationProvider(){
+    public DaoAuthenticationProvider daoAuthenticationProvider() {
         //aca debe venir el usuario y desencriptador de claves
-      DaoAuthenticationProvider provider= new DaoAuthenticationProvider();
-      provider.setUserDetailsService(usuarioService);
-      provider.setPasswordEncoder(bCryptPasswordEncoder);
+        DaoAuthenticationProvider provider = new DaoAuthenticationProvider();
+        provider.setUserDetailsService(usuarioService);
+        provider.setPasswordEncoder(bCryptPasswordEncoder);
         return provider;
     }
+
     //aca deberiamos hablar de las autorizaciones
     @Bean
-    public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception{
-//        http
-//                .csrf(AbstractHttpConfigurer::disable)
-//                .authorizeHttpRequests((authz)-> authz
-//                        .requestMatchers("/post_odontologos.html","/get_odontologos.html")
-//                        .hasRole("ADMIN")
-//                        .anyRequest().authenticated()
-//                )
-//                .formLogin(withDefaults())
-//                .logout(withDefaults());
-//        return http.build();
+    public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         http
                 .csrf(AbstractHttpConfigurer::disable)
-                .authorizeHttpRequests((authz)-> authz
-                        .requestMatchers("/post_turnos.html","/get_turnos.html").permitAll()
-                        .requestMatchers("/post_odontologos.html","/get_odontologos.html", "/post_pacientes.html","/get_pacientes.html")
+                .authorizeHttpRequests((authz) -> authz
+                        .requestMatchers("/post_turnos.html", "/get_turnos.html").permitAll()
+                        .requestMatchers("/post_odontologos.html", "/get_odontologos.html", "/post_pacientes.html", "/get_pacientes.html")
                         .hasRole("ADMIN")
                         .anyRequest().authenticated()
                 )

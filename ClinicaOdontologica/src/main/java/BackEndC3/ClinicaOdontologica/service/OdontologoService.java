@@ -13,22 +13,27 @@ public class OdontologoService {
     @Autowired
     private OdontologoRepository odontologoRepository;
 
-    public Odontologo registrarOdontologo(Odontologo odontologo){
+    public Odontologo registrarOdontologo(Odontologo odontologo) {
         return odontologoRepository.save(odontologo);
     }
-    public Optional<Odontologo> buscarPorId(Long id){
+
+    public Optional<Odontologo> buscarPorId(Long id) {
         return odontologoRepository.findById(id);
     }
-    public Optional<Odontologo> buscarPorMatricula(String matricula){
+
+    public Optional<Odontologo> buscarPorMatricula(String matricula) {
         return odontologoRepository.findByMatricula(matricula);
     }
-    public void eliminarOdontologo(Long id){
+
+    public void eliminarOdontologo(Long id) {
         odontologoRepository.deleteById(id);
     }
-    public void actualizarOdontologo(Odontologo odontologo){
+
+    public void actualizarOdontologo(Odontologo odontologo) {
         odontologoRepository.save(odontologo);
     }
-    public List<Odontologo> listarTodos(){
+
+    public List<Odontologo> listarTodos() {
         return odontologoRepository.findAll();
     }
 }

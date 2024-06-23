@@ -13,22 +13,27 @@ public class PacienteService {
     @Autowired
     private PacienteRepository pacienteRepository;
 
-public Paciente guardarPaciente(Paciente paciente){
-    return pacienteRepository.save(paciente);
-}
-public Optional<Paciente> buscarPorId(Long id){
-    return pacienteRepository.findById(id);
-}
-public Optional<Paciente> buscarPorEmail(String email){
-    return pacienteRepository.findByEmail(email);
-}
-public void actualizarPaciente(Paciente paciente){
-    pacienteRepository.save(paciente);
-}
-public void eliminarPaciente(Long id){
-    pacienteRepository.deleteById(id);
-}
-public List<Paciente> listarTodos(){
-    return pacienteRepository.findAll();
-}
+    public Paciente guardarPaciente(Paciente paciente) {
+        return pacienteRepository.save(paciente);
+    }
+
+    public Optional<Paciente> buscarPorId(Long id) {
+        return pacienteRepository.findById(id);
+    }
+
+    public Optional<Paciente> buscarPorEmail(String email) {
+        return pacienteRepository.findByEmail(email);
+    }
+
+    public void actualizarPaciente(Paciente paciente) {
+        pacienteRepository.save(paciente);
+    }
+
+    public void eliminarPaciente(Long id) {
+        pacienteRepository.deleteById(id);
+    }
+
+    public List<Paciente> listarTodos() {
+        return pacienteRepository.findAll();
+    }
 }

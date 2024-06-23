@@ -13,19 +13,23 @@ public class TurnoService {
     @Autowired
     private TurnoRepository turnoRepository;
 
-    public Turno registrarTurno(Turno turno){
+    public Turno registrarTurno(Turno turno) {
         return turnoRepository.save(turno);
     }
-    public Optional<Turno> buscarPorId(Long id){
+
+    public Optional<Turno> buscarPorId(Long id) {
         return turnoRepository.findById(id);
     }
-    public void eliminarTurno(Long id){
+
+    public void eliminarTurno(Long id) {
         turnoRepository.deleteById(id);
     }
-    public List<Turno> listarTodos(){
+
+    public List<Turno> listarTodos() {
         return turnoRepository.findAll();
     }
-    public void actualizarTurno(Turno turno){
+
+    public void actualizarTurno(Turno turno) {
         turnoRepository.save(turno);
     }
 }

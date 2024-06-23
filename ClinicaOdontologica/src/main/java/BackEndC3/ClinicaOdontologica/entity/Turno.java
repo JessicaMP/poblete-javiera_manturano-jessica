@@ -1,9 +1,13 @@
 package BackEndC3.ClinicaOdontologica.entity;
 
 import jakarta.persistence.*;
+import lombok.Getter;
+import lombok.Setter;
 
 import java.time.LocalDate;
 
+@Getter
+@Setter
 @Entity
 @Table(name = "turnos")
 public class Turno {
@@ -26,39 +30,13 @@ public class Turno {
         this.fecha = fecha;
     }
 
-    public Turno() {
-    }
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public Paciente getPaciente() {
-        return paciente;
-    }
-
-    public void setPaciente(Paciente paciente) {
+    public Turno(Paciente paciente, Odontologo odontologo, LocalDate fecha) {
         this.paciente = paciente;
-    }
-
-    public Odontologo getOdontologo() {
-        return odontologo;
-    }
-
-    public void setOdontologo(Odontologo odontologo) {
         this.odontologo = odontologo;
-    }
-
-    public LocalDate getFecha() {
-        return fecha;
-    }
-
-    public void setFecha(LocalDate fecha) {
         this.fecha = fecha;
+    }
+
+    public Turno() {
     }
 
     @Override

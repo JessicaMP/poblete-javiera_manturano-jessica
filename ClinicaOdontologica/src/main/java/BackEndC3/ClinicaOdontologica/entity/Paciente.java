@@ -34,7 +34,7 @@ public class Paciente {
         this.cedula = cedula;
         this.fechaIngreso = fechaIngreso;
         this.domicilio = domicilio;
-        this.email= email;
+        this.email = email;
     }
 
 
@@ -45,7 +45,7 @@ public class Paciente {
         this.cedula = cedula;
         this.fechaIngreso = fechaIngreso;
         this.domicilio = domicilio;
-        this.email= email;
+        this.email = email;
     }
 
     public Paciente() {
