@@ -31,7 +31,7 @@ public class PacienteController {
         return ResponseEntity.badRequest().build();
     }
 
-    @GetMapping("/buscar/{id}")
+    @GetMapping("/{id}")
     public ResponseEntity<Optional<Paciente>> buscarPorPaciente(@PathVariable Long id) {
         Optional<Paciente> pacienteBuscado = pacienteService.buscarPorId(id);
         if (pacienteBuscado.isPresent()) {
