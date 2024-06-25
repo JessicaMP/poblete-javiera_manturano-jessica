@@ -1,10 +1,6 @@
 package BackEndC3.ClinicaOdontologica;
 
-import BackEndC3.dto.TurnoDTO;
-import BackEndC3.entity.Domicilio;
 import BackEndC3.entity.Odontologo;
-import BackEndC3.entity.Paciente;
-import BackEndC3.entity.Turno;
 import BackEndC3.service.OdontologoService;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,9 +12,6 @@ import org.springframework.test.web.servlet.MvcResult;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 import org.springframework.test.web.servlet.result.MockMvcResultHandlers;
 import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
-
-import java.time.LocalDate;
-
 import static org.junit.jupiter.api.Assertions.assertFalse;
 
 @SpringBootTest
