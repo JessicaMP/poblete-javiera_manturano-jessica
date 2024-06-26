@@ -17,15 +17,23 @@ public class TurnoService {
     @Autowired
     private TurnoRepository turnoRepository;
 
-    public TurnoDTO registrarTurno(Turno turno) {
-        Turno turnoGuardado = turnoRepository.save(turno);
-        return turnoAturnoDTO(turnoGuardado);
+    public Turno registrarTurno(Turno turno) {
+//        Turno turnoGuardado = turnoRepository.save(turno);
+//        return turnoAturnoDTO(turnoGuardado);
+        return turnoRepository.save(turno);
     }
 
-    public Optional<TurnoDTO> buscarPorId(Long id) {
+//    public Optional<TurnoDTO> buscarPorId(Long id) {
+//        Optional<Turno> turnoBuscado = turnoRepository.findById(id);
+//        if (turnoBuscado.isPresent()) {
+//            return Optional.of(turnoAturnoDTO(turnoBuscado.get()));
+//        }
+//        return Optional.empty();
+//    }
+public Optional<Turno> buscarPorId(Long id) {
         Optional<Turno> turnoBuscado = turnoRepository.findById(id);
         if (turnoBuscado.isPresent()) {
-            return Optional.of(turnoAturnoDTO(turnoBuscado.get()));
+            return Optional.of(turnoBuscado.get());
         }
         return Optional.empty();
     }
@@ -34,14 +42,18 @@ public class TurnoService {
         turnoRepository.deleteById(id);
     }
 
-    public List<TurnoDTO> listarTodos() {
-        List<Turno> listaTurno = turnoRepository.findAll();
-        List<TurnoDTO> listaDTO = new ArrayList<>();
-        for (Turno turno : listaTurno) {
-            listaDTO.add(turnoAturnoDTO(turno));
+//    public List<TurnoDTO> listarTodos() {
+//        List<Turno> listaTurno = turnoRepository.findAll();
+//        List<TurnoDTO> listaDTO = new ArrayList<>();
+//        for (Turno turno : listaTurno) {
+//            listaDTO.add(turnoAturnoDTO(turno));
+//
+//        }
+//        return listaDTO;
+//    }
 
-        }
-        return listaDTO;
+    public List<Turno> listarTodos() {
+        return turnoRepository.findAll();
     }
 
     public void actualizarTurno(Turno turno) {

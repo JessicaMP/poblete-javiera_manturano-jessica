@@ -54,7 +54,7 @@ public class PacienteController {
         return ResponseEntity.ok(pacienteService.listarTodos());
     }
 
-    @DeleteMapping
+    @DeleteMapping("/{id}")
     public ResponseEntity<String> eliminarPaciente(@PathVariable Long id) throws ResourceNotFoundException {
         Optional<Paciente> pacienteBuscado = pacienteService.buscarPorId(id);
         if (pacienteBuscado.isPresent()) {

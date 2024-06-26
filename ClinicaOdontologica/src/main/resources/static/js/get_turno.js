@@ -30,8 +30,8 @@
 
             turnoRow.innerHTML = '<td>' + turno.id + '</td>' +
                     '<td class=\"td_fecha\">' + turno.fecha+ '</td>' +
-                    '<td class=\"td_paciente_id\">' + turno.pacienteId + '</td>' +
-                    '<td class=\"td_odontologo_id\">' + turno.odontologoId + '</td>' +
+                    '<td class=\"td_paciente_id\">' + turno.paciente.nombre + ' ' + turno.paciente.apellido + '</td>' +
+                    '<td class=\"td_odontologo_id\">' + turno.odontologo.nombre + ' ' + turno.odontologo.apellido + '</td>' +
                     '<td>' + updateButton + '</td>' +
                     '<td>' + deleteButton + '</td>';
 

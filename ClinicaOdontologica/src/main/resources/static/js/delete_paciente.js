@@ -5,6 +5,6 @@ function deleteBy(id){
     }
     fetch(url,settings)
     .then(response=>response.json())
-              let row_id = "#tr_" + id;
-              document.querySelector(row_id).remove();
+    let row_id = "#tr_" + id;
+    document.querySelector(row_id).remove();
 }

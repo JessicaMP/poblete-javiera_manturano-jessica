@@ -6,8 +6,11 @@ window.addEventListener('load', function () {
         const formData = {
 
             fecha: document.querySelector('#fecha').value,
-            pacienteId: document.querySelector('#paciente_id').value,
-            odontologoId: document.querySelector('#odontologo_id').value,
+            paciente: {
+            id: Number(document.querySelector('#paciente_id').value)
+            },
+            odontologo: {
+            id: Number(document.querySelector('#odontologo_id').value)},
 
         };
 
@@ -33,6 +36,7 @@ window.addEventListener('load', function () {
 
             })
             .catch(error => {
+                    console.log({error})
                     let errorAlert = '<div class="alert alert-danger alert-dismissible">' +
                                      '<button type="button" class="close" data-dismiss="alert">&times;</button>' +
                                      '<strong> Error intente nuevamente</strong> </div>'

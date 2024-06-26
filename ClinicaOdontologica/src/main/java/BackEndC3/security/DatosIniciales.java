@@ -43,8 +43,15 @@ public class DatosIniciales implements ApplicationRunner {
     public void content() {
         Paciente paciente = pacienteService.guardarPaciente(new Paciente("Jorgito", "pereyra", "11111", LocalDate.of(2024, 6, 20), new Domicilio("calle falsa", 123, "La Rioja", "Argentina"), "jorge.pereyra@digitalhouse.com"));
         Odontologo odontologo = odontologoService.registrarOdontologo(new Odontologo("MP10", "Gina", "Arias"));
-        TurnoDTO turnoDTO = turnoService.registrarTurno(new Turno(paciente, odontologo, LocalDate.of(2024, 6, 20)));
+        Turno turnoDTO = turnoService.registrarTurno(new Turno(paciente, odontologo, LocalDate.of(2024, 6, 20)));
+//        TurnoDTO turnoDTO = turnoService.registrarTurno(new Turno(paciente, odontologo, LocalDate.of(2024, 6, 20)));
+
+        Paciente paciente1 = pacienteService.guardarPaciente(new Paciente("Jaime", "Perez", "m1234", LocalDate.of(2024, 6, 21), new Domicilio("avenida flores", 15, "La Colombiana", "Lima"), "flores.a@digitalhouse.com"));
+        Odontologo odontologo1 = odontologoService.registrarOdontologo(new Odontologo("RA10", "Raul", "Andrade"));
+        Odontologo odontologo2 = odontologoService.registrarOdontologo(new Odontologo("KS10", "Katman", "Soto"));
+        Odontologo odontologo3 = odontologoService.registrarOdontologo(new Odontologo("TM10", "Taylor", "Maldiny"));
     }
+
     @Override
     public void run(ApplicationArguments args) throws Exception {
         addUsers();

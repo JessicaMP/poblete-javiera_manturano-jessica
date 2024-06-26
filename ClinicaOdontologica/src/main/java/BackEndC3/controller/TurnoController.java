@@ -1,7 +1,6 @@
 package BackEndC3.controller;
 
 
-import BackEndC3.dto.TurnoDTO;
 import BackEndC3.entity.Odontologo;
 import BackEndC3.entity.Paciente;
 import BackEndC3.entity.Turno;
@@ -27,7 +26,7 @@ public class TurnoController {
     private OdontologoService odontologoService;
 
     @PostMapping
-    public ResponseEntity<TurnoDTO> guardarTurno(@RequestBody Turno turno) {
+    public ResponseEntity<Turno> guardarTurno(@RequestBody Turno turno) {
         Optional<Paciente> pacienteBuscado = pacienteService.buscarPorId(turno.getPaciente().getId());
         Optional<Odontologo> odontologoBuscado = odontologoService.buscarPorId(turno.getOdontologo().getId());
 
@@ -42,7 +41,7 @@ public class TurnoController {
 
     @PutMapping
     public ResponseEntity<String> actualizarTurno(@RequestBody Turno turno) {
-        Optional<TurnoDTO> turnoBuscado = turnoService.buscarPorId(turno.getId());
+        Optional<Turno> turnoBuscado = turnoService.buscarPorId(turno.getId());
         if (!turnoBuscado.isPresent()) {
             return ResponseEntity.badRequest().body("Turno no encontrado");
         }
@@ -60,22 +59,22 @@ public class TurnoController {
     }
 
     @GetMapping
-    public ResponseEntity<List<TurnoDTO>> buscarTodos() {
+    public ResponseEntity<List<Turno>> buscarTodos() {
         return ResponseEntity.ok(turnoService.listarTodos());
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<Optional<TurnoDTO>> getTurno(@PathVariable Long id) throws ResourceNotFoundException {
-        Optional<TurnoDTO> turnoBuscado = turnoService.buscarPorId(id);
+    public ResponseEntity<Optional<Turno>> getTurno(@PathVariable Long id) throws ResourceNotFoundException {
+        Optional<Turno> turnoBuscado = turnoService.buscarPorId(id);
         if (turnoBuscado.isPresent()) {
             return ResponseEntity.ok(turnoService.buscarPorId(id));
         }
         throw new ResourceNotFoundException("Turno no encontrado");
     }
 
-    @DeleteMapping
+    @DeleteMapping("/{id}")
     public ResponseEntity<String> eliminarTurno(@PathVariable Long id) {
-        Optional<TurnoDTO> turnoBuscado = turnoService.buscarPorId(id);
+        Optional<Turno> turnoBuscado = turnoService.buscarPorId(id);
         if (turnoBuscado.isPresent()) {
             turnoService.eliminarTurno(id);
             return ResponseEntity.ok("Turno " + id + " eliminado con exito");
