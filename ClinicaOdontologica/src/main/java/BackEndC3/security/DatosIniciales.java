@@ -48,6 +48,7 @@ public class DatosIniciales implements ApplicationRunner {
 
         Paciente paciente1 = pacienteService.guardarPaciente(new Paciente("Jaime", "Perez", "m1234", LocalDate.of(2024, 6, 21), new Domicilio("avenida flores", 15, "La Colombiana", "Lima"), "flores.a@digitalhouse.com"));
         Odontologo odontologo1 = odontologoService.registrarOdontologo(new Odontologo("RA10", "Raul", "Andrade"));
+        Turno turno = turnoService.registrarTurno(new Turno(paciente, odontologo1, LocalDate.of(2024, 6, 25)));
         Odontologo odontologo2 = odontologoService.registrarOdontologo(new Odontologo("KS10", "Katman", "Soto"));
         Odontologo odontologo3 = odontologoService.registrarOdontologo(new Odontologo("TM10", "Taylor", "Maldiny"));
     }

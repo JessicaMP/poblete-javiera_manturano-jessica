@@ -8,7 +8,6 @@ import BackEndC3.repository.TurnoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -23,14 +22,14 @@ public class TurnoService {
         return turnoRepository.save(turno);
     }
 
-//    public Optional<TurnoDTO> buscarPorId(Long id) {
+    //    public Optional<TurnoDTO> buscarPorId(Long id) {
 //        Optional<Turno> turnoBuscado = turnoRepository.findById(id);
 //        if (turnoBuscado.isPresent()) {
 //            return Optional.of(turnoAturnoDTO(turnoBuscado.get()));
 //        }
 //        return Optional.empty();
 //    }
-public Optional<Turno> buscarPorId(Long id) {
+    public Optional<Turno> buscarPorId(Long id) {
         Optional<Turno> turnoBuscado = turnoRepository.findById(id);
         if (turnoBuscado.isPresent()) {
             return Optional.of(turnoBuscado.get());
@@ -41,6 +40,14 @@ public Optional<Turno> buscarPorId(Long id) {
     public void eliminarTurno(Long id) {
         turnoRepository.deleteById(id);
     }
+
+//    public List<Turno>  buscarPorIdPaciente(Long id) {
+//        return turnoRepository.findByIdPacientes(id);
+//    }
+//
+//    public List<Turno> buscarPorIdOdontologo(Long id) {
+//        return turnoRepository.findAllByIdOdontologos(id);
+//    }
 
 //    public List<TurnoDTO> listarTodos() {
 //        List<Turno> listaTurno = turnoRepository.findAll();
